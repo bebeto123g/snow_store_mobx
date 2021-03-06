@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import Alert from './Alert'
 import { fetchBrandList } from '../services/fetchBrandlist'
+import PageError from './PageError'
 
 
 class Brands {
@@ -14,6 +15,7 @@ class Brands {
     try {
       this.brands = await fetchBrandList()
     } catch (e) {
+      PageError.error()
       Alert.show({
         variant: 'danger',
         message: 'Оказия при загрузке брэндов'

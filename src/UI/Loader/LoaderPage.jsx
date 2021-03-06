@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Spinner } from 'react-bootstrap'
+import Page from '../../hoc/Page'
 
 const Loader = styled.div`
   margin-top: 300px;
@@ -12,14 +13,16 @@ const Loader = styled.div`
 
 const LoaderPage = ({ variant = 'dark' }) => {
   return (
-    <Loader>
-      <Spinner animation="grow" variant={variant} />
-    </Loader>
+    <Page>
+      <Loader>
+        <Spinner animation='grow' variant={variant} />
+      </Loader>
+    </Page>
   )
 }
 
 LoaderPage.propTypes = {
-  variant: PropTypes.string,
+  variant: PropTypes.string
 }
 
 export default LoaderPage

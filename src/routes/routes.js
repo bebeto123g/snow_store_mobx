@@ -5,8 +5,10 @@ import BrandsPage from '../page/BrandsPage'
 import OrdersPage from '../page/OrdersPage'
 import ProfilePage from '../page/ProfilePage'
 import OrderDetailsPage from '../page/OrderDetailsPage'
+import HomeAdminPage from '../pageAdmin/HomeAdminPage'
+import HomeManagerPage from '../pageManager/HomeManagerPage'
 
-export const routes = [
+export const userRoutes = [
   { path: '/', component: HomePage, exact: true, isAuth: false },
   { path: '/catalog', component: CatalogPage, exact: true, isAuth: false },
   { path: '/cart', component: CartPage, exact: true, isAuth: false },
@@ -19,4 +21,12 @@ export const routes = [
     exact: true,
     isAuth: true,
   },
+]
+
+export const adminRoutes = [
+  { path: '/admin/', component: HomeAdminPage, exact: true, isAdmin: true },
+]
+
+export const managerRoutes = [
+  { path: '/manager/', component: HomeManagerPage, exact: true, isManager: true },
 ]

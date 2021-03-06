@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import { fetchAllOrder, fetchDetailOrder, fetchStatusOrderUndo } from '../services/fetchToOrder'
 import Alert from './Alert'
+import PageError from './PageError'
 
 class Orders {
   orders = []
@@ -32,6 +33,7 @@ class Orders {
         variant: 'danger',
         message: 'Оказия при загрузке заказов'
       })
+      PageError.error()
     }
   }
 
@@ -57,6 +59,7 @@ class Orders {
         variant: 'danger',
         message: 'Оказия при загрузке заказа'
       })
+      PageError.error()
     }
 
   }

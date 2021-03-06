@@ -1,19 +1,31 @@
 import { makeAutoObservable } from 'mobx'
 
-class isLoginStore {
+class isLogin {
   isLogin = false
+  isManager = false
+  isAdmin = false
 
   constructor() {
     makeAutoObservable(this)
+  }
+
+  logout() {
+    this.isLogin = false
+    this.isManager = false
+    this.isAdmin = false
   }
 
   login() {
     this.isLogin = true
   }
 
-  logout() {
-    this.isLogin = false
+  manager() {
+    this.isManager = true
+  }
+
+  admin() {
+    this.isAdmin = true
   }
 }
 
-export default new isLoginStore()
+export default new isLogin()

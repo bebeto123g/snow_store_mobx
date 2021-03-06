@@ -1,13 +1,15 @@
 import React from 'react'
+import { observer } from 'mobx-react'
+import Error from '../mobx/PageError'
 
 import PageError from '../page/PageError'
 
-const Page = ({ children }) => {
-  // const { pageError } = useSelector((state) => state.pageLoading, shallowEqual)
+const Page = observer(({ children }) => {
 
-  // if (pageError) return <PageError />
+    if (Error.isError) return <PageError />
 
-  return <>{children}</>
-}
+    return <>{children}</>
+  }
+)
 
 export default Page

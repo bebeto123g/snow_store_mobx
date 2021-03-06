@@ -3,6 +3,7 @@ import { fetchCatalog } from '../services/fetchCatalog'
 import Alert from './Alert'
 import CatalogMap from './CatalogMap'
 import CartMap from './CartMap'
+import PageError from './PageError'
 
 class Catalog {
   catalog = []
@@ -30,6 +31,7 @@ class Catalog {
         variant: 'danger',
         message: 'Оказия при загрузке каталога'
       })
+      PageError.error()
     }
   }
 
