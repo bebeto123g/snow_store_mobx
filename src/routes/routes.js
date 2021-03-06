@@ -1,12 +1,12 @@
-import HomePage from '../page/HomePage'
-import CatalogPage from '../page/CatalogPage'
-import CartPage from '../page/CartPage'
-import BrandsPage from '../page/BrandsPage'
-import OrdersPage from '../page/OrdersPage'
-import ProfilePage from '../page/ProfilePage'
-import OrderDetailsPage from '../page/OrderDetailsPage'
-import HomeAdminPage from '../pageAdmin/HomeAdminPage'
-import HomeManagerPage from '../pageManager/HomeManagerPage'
+import HomePage from '../user/pageUser/HomePage'
+import CatalogPage from '../user/pageUser/CatalogPage'
+import CartPage from '../user/pageUser/CartPage'
+import BrandsPage from '../user/pageUser/BrandsPage'
+import OrdersPage from '../user/pageUser/OrdersPage'
+import ProfilePage from '../user/pageUser/ProfilePage'
+import OrderDetailsPage from '../user/pageUser/OrderDetailsPage'
+import HomeAdminPage from '../admin/pageAdmin/HomeAdminPage'
+import HomeManagerPage from '../manager/pageManager/HomeManagerPage'
 
 export const userRoutes = [
   { path: '/', component: HomePage, exact: true, isAuth: false },
@@ -24,9 +24,9 @@ export const userRoutes = [
 ]
 
 export const adminRoutes = [
-  { path: '/admin/', component: HomeAdminPage, exact: true, isAdmin: true },
+  { path: '/admin', component: HomeAdminPage, exact: true },
 ]
 
 export const managerRoutes = [
-  { path: '/manager/', component: HomeManagerPage, exact: true, isManager: true },
+  { path: '/manager', component: HomeManagerPage, exact: true },
 ]

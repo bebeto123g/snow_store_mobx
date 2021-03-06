@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 
 import { Col, Row } from 'react-bootstrap'
-import Page from '../hoc/Page'
+import Page from '../../hoc/Page'
 
-import LoaderPage from '../UI/Loader/LoaderPage'
-import PageHeader from '../UI/PageHeader'
+import LoaderPage from '../../UI/Loader/LoaderPage'
+import PageHeader from '../../UI/PageHeader'
 
 import CatalogCard from '../components/Catalog/Card'
-import Catalog from '../mobx/Catalog'
+import Catalog from '../../mobx/Catalog'
 
 const CatalogPage = observer(() => {
 

@@ -1,27 +1,29 @@
 import React from 'react'
-import { observer } from 'mobx-react'
+import PropTypes from 'prop-types'
 
 import { Nav } from 'react-bootstrap'
 
 import ButtonNavLink from '../../UX/Button/ButtonNavLink'
-import { navLinksTypes } from './navLinksTypes'
-import isLogin from '../../mobx/isLogin'
+import { navLinksUser } from './navLinksTypes'
 
-const NavLinksUser = observer(() => {
-    return (
-      <Nav className='mr-auto'>
-        {navLinksTypes.map(({ to, exact, text, isAuth }) => {
-          if (!isLogin.isLogin && isAuth) return
+const NavLinksUser = ({ isLogin }) => {
+  return (
+    <Nav className='mr-auto'>
+      {navLinksUser.map(({ to, exact, text, isAuth }) => {
+        if (!isLogin && isAuth) return
 
-          return (
-            <ButtonNavLink to={to} exact={exact} key={text + to}>
-              {text}
-            </ButtonNavLink>
-          )
-        })}
-      </Nav>
-    )
-  }
-)
+        return (
+          <ButtonNavLink to={to} exact={exact} key={text + to}>
+            {text}
+          </ButtonNavLink>
+        )
+      })}
+    </Nav>
+  )
+}
+
+NavLinksUser.propTypes = {
+  isLogin: PropTypes.bool.isRequired
+}
 
 export default NavLinksUser

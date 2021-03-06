@@ -7,12 +7,12 @@ import CartTableCell from '../components/Cart/CartTableCell'
 import CartBottom from '../components/Cart/CartBottom.jsx'
 import CartEmpty from '../components/Cart/CartEmpty'
 
-import PageHeader from '../UI/PageHeader'
-import Page from '../hoc/Page'
-import LoaderPage from '../UI/Loader/LoaderPage'
-import CatalogMap from '../mobx/CatalogMap'
-import CartMap from '../mobx/CartMap'
-import Catalog from '../mobx/Catalog'
+import PageHeader from '../../UI/PageHeader'
+import Page from '../../hoc/Page'
+import LoaderPage from '../../UI/Loader/LoaderPage'
+import CatalogMap from '../../mobx/CatalogMap'
+import CartMap from '../../mobx/CartMap'
+import Catalog from '../../mobx/Catalog'
 
 const CartPage = observer(() => {
 

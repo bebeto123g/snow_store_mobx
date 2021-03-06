@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Modal } from 'react-bootstrap'
 
-import ButtonLogout from '../../../UX/Auth/ButtonLogout'
+import ButtonLogout from '../../../UX/Button/ButtonLogout'
 import ButtonHideModal from '../../../UX/Modal/ButtonHideModal'
 
 const ModalLogout = () => {

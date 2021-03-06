@@ -4,10 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'mobx-react'
 
 import App from './App'
-import './styles/global.sass'
+import './global.sass'
 
-import reportWebVitals from './reportWebVitals'
 import { store } from './mobx/store'
+import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,5 +19,9 @@ ReactDOM.render(
 )
 
 reportWebVitals()
+
+// TODO - разделить струтуру приложения для админа\манагера\ползователя
+// TODO - админ добавляет\удаляет манагеров, изменяет продукт\пользователя
+// TODO - манагеров 2 вида, одни меняют статус заказа, вторые изменяют\добавляют\удаляют товары (big\small)
 
 // TODO websoket изучить, WebGL, Audio

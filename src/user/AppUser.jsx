@@ -2,13 +2,13 @@ import React from 'react'
 
 import { Container } from 'react-bootstrap'
 
-import SwitchRoutes from './routes/SwitchRoutes'
+import SwitchUserRoutes from '../routes/SwitchUserRoutes'
 
-import { AppContainer } from './styles/AppConteiner'
-import AlertApp from './components/AlertApp'
-import ModalApp from './components/Modal'
-import NavbarPanel from './components/Navbar'
-import Footer from './components/Footer'
+import { AppContainer } from '../styledComponents/AppConteiner'
+import AlertApp from '../components/AlertApp'
+import ModalApp from '../components/Modal'
+import NavbarPanel from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const AppUser = () => {
   return (
@@ -17,7 +17,7 @@ const AppUser = () => {
       <AppContainer>
         <Container>
           <AlertApp />
-          <SwitchRoutes />
+          <SwitchUserRoutes />
         </Container>
       </AppContainer>
       <Footer />

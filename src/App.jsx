@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 
-import { Container } from 'react-bootstrap'
-import { AppContainer } from './styles/AppConteiner'
-
-import SwitchRoutes from './routes/SwitchRoutes'
-
-import NavbarPanel from './components/Navbar/'
-import Footer from './components/Footer/'
-import ModalApp from './components/Modal/'
-import AlertApp from './components/AlertApp'
 import Auth from './mobx/Auth'
 import Cart from './mobx/Cart'
+import isLogin from './mobx/isLogin'
+
+import AppAdmin from './admin/AppAdmin'
+import AppManager from './manager/AppManager'
+import AppUser from './user/AppUser'
 
 const App = observer(() => {
 
@@ -23,19 +19,10 @@ const App = observer(() => {
     Cart.init()
   }, [])
 
-  return (
-    <>
-      <NavbarPanel />
-      <AppContainer>
-        <Container>
-          <AlertApp />
-          <SwitchRoutes />
-        </Container>
-      </AppContainer>
-      <Footer />
-      <ModalApp />
-    </>
-  )
+  if (isLogin.isAdmin) return <AppAdmin />
+  if (isLogin.isManager) return <AppManager />
+
+  return <AppUser />
 })
 
 export default App

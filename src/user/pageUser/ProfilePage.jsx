@@ -3,10 +3,10 @@ import { observer } from 'mobx-react'
 
 import { Row, Table } from 'react-bootstrap'
 
-import PageHeader from '../UI/PageHeader'
-import Page from '../hoc/Page'
-import ButtonToRoute from '../UX/Routes/ButtonToRoute'
-import Auth from '../mobx/Auth'
+import PageHeader from '../../UI/PageHeader'
+import Page from '../../hoc/Page'
+import ButtonToRoute from '../../UX/Button/ButtonToRoute'
+import Auth from '../../mobx/Auth'
 
 const ProfilePage = observer(() => {
     const { email, name, tel, register } = Auth.profile

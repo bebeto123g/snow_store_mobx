@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { observer } from 'mobx-react'
 import { toJS } from 'mobx'
 
-import { TrTableOrders } from '../styles/TrTableOrders'
+import { TrTableOrders } from '../styledComponents/TrTableOrders'
 import Catalog from '../mobx/Catalog'
-import SpinnerSpan from '../UI/Loader/SpinnerSpan'
+import LoaderSpan from '../UI/Loader/LoaderSpan'
 
 const OrderDetailCart = observer(({ count, price, id }) => {
   const [bord, setBord] = useState(null)
@@ -20,14 +20,14 @@ const OrderDetailCart = observer(({ count, price, id }) => {
     return (
       <TrTableOrders>
         <td colSpan={'3'}>
-          <SpinnerSpan />
+          <LoaderSpan />
         </td>
       </TrTableOrders>
     )
 
   return (
     <TrTableOrders>
-      <td>{bord || <SpinnerSpan />}</td>
+      <td>{bord || <LoaderSpan />}</td>
       <td>{count} шт.</td>
       <td>{price} &#8381;</td>
     </TrTableOrders>

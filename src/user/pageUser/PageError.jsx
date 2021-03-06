@@ -4,9 +4,9 @@ import { observer } from 'mobx-react'
 import styled from 'styled-components'
 
 import { Row } from 'react-bootstrap'
-import PageHeader from '../UI/PageHeader'
-import ButtonToRoute from '../UX/Routes/ButtonToRoute'
-import Error from '../mobx/PageError'
+import PageHeader from '../../UI/PageHeader'
+import ButtonToRoute from '../../UX/Button/ButtonToRoute'
+import Error from '../../mobx/PageError'
 
 const RowError = styled(Row)`
   margin-top: 55px;

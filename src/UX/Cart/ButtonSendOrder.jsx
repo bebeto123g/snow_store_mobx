@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap'
 import Cart from '../../mobx/Cart'
 
-const ButtonOrderCart = observer(({ children, variant = 'success', callback }) => {
+const ButtonSendOrder = observer(({ children, variant = 'success', callback }) => {
 
     const handler = useCallback(async () => {
       await Cart.sendOrder()
@@ -22,9 +22,9 @@ const ButtonOrderCart = observer(({ children, variant = 'success', callback }) =
   }
 )
 
-ButtonOrderCart.propTypes = {
+ButtonSendOrder.propTypes = {
   variant: PropTypes.string,
   callback: PropTypes.func
 }
 
-export default ButtonOrderCart
+export default ButtonSendOrder

@@ -5,8 +5,8 @@ import { Modal } from 'react-bootstrap'
 import ModalState from '../../../mobx/Modal'
 
 import ModalHeader from '../ModalHeader'
-import ButtonOrderCart from '../../../UX/Cart/ButtonOrderCart'
-import CartSum from '../../Cart/CartSum'
+import ButtonSendOrder from '../../../UX/Cart/ButtonSendOrder'
+import CartSum from '../../../user/components/Cart/CartSum'
 import ButtonHideModal from '../../../UX/Modal/ButtonHideModal'
 import { observer } from 'mobx-react'
 
@@ -26,9 +26,9 @@ const ModalOrder = observer(() => {
           <ButtonHideModal variant={'warning'} className={'mr-auto'}>
             Отмена
           </ButtonHideModal>
-          <ButtonOrderCart variant={'success'} callback={handler}>
+          <ButtonSendOrder variant={'success'} callback={handler}>
             Заказать
-          </ButtonOrderCart>
+          </ButtonSendOrder>
         </Modal.Footer>
       </>
     )

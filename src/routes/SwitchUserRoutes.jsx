@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { userRoutes } from './routes'
 import isLogin from '../mobx/isLogin'
 
-const SwitchRoutes = observer(() => {
+const SwitchUserRoutes = observer(() => {
     return (
       <Switch>
         {userRoutes.map((route) => {
@@ -20,4 +20,4 @@ const SwitchRoutes = observer(() => {
   }
 )
 
-export default SwitchRoutes
+export default SwitchUserRoutes

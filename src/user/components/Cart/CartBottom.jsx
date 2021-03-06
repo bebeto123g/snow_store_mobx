@@ -4,8 +4,8 @@ import { observer } from 'mobx-react'
 import { Row } from 'react-bootstrap'
 
 import CartSum from './CartSum'
-import ButtonShowModal from '../../UX/Modal/ButtonShowModal'
-import isLogin from '../../mobx/isLogin'
+import ButtonShowModal from '../../../UX/Modal/ButtonShowModal'
+import isLogin from '../../../mobx/isLogin'
 
 const CartBottom = observer(() => {
     return (

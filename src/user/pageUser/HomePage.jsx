@@ -3,16 +3,16 @@ import { observer } from 'mobx-react'
 
 import { Button, Row } from 'react-bootstrap'
 
-import PageHeader from '../UI/PageHeader'
-import Page from '../hoc/Page'
-import Alert from '../mobx/Alert'
+import PageHeader from '../../UI/PageHeader'
+import Page from '../../hoc/Page'
+import Alert from '../../mobx/Alert'
 
 const HomePage = observer(() => {
 
     const testHandler = useCallback(() => {
       Alert.show({
         variant: 'success',
-        message: 'ТЕСТОВОЕ СООБЩЕНИЕ! /run/media/bebeto/documents/web/REACT/snowboards_store/src/page/HomePage.jsx/run/media/bebeto/documents/web/REACT/snowboards_store/src/page/HomePage.jsx/run/media/bebeto/documents/web/REACT/snowboards_store/src/page/HomePage.jsx'
+        message: 'ТЕСТОВОЕ СООБЩЕНИЕ! /run/media/bebeto/documents/web/REACT/snowboards_store/src/pageUser/HomePage.jsx/run/media/bebeto/documents/web/REACT/snowboards_store/src/pageUser/HomePage.jsx/run/media/bebeto/documents/web/REACT/snowboards_store/src/pageUser/HomePage.jsx'
       })
     }, [])
 

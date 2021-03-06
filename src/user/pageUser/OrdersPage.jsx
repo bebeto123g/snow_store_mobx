@@ -3,13 +3,13 @@ import { observer } from 'mobx-react'
 
 import { Row, Table } from 'react-bootstrap'
 
-import PageHeader from '../UI/PageHeader'
-import Page from '../hoc/Page'
-import LoaderPage from '../UI/Loader/LoaderPage'
-import ButtonToRoute from '../UX/Routes/ButtonToRoute'
-import OrdersTableCell from '../components/OrdersTableCell'
-import { TrTableOrders } from '../styles/TrTableOrders'
-import Orders from '../mobx/Orders'
+import PageHeader from '../../UI/PageHeader'
+import Page from '../../hoc/Page'
+import LoaderPage from '../../UI/Loader/LoaderPage'
+import ButtonToRoute from '../../UX/Button/ButtonToRoute'
+import OrdersTableCell from '../../components/OrdersTableCell'
+import { TrTableOrders } from '../../styledComponents/TrTableOrders'
+import Orders from '../../mobx/Orders'
 
 const OrdersPage = observer(() => {
 

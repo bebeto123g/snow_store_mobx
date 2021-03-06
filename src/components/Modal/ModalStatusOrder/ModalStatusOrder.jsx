@@ -7,7 +7,7 @@ import ModalState from '../../../mobx/Modal'
 
 import ModalHeader from '../ModalHeader'
 import ButtonHideModal from '../../../UX/Modal/ButtonHideModal'
-import ButtonPutStatusOrder from '../../../UX/Order/ButtonPutStatusOrder'
+import ButtonPutStatusOrder from '../../../UX/Button/ButtonPutStatusOrder'
 
 const ModalStatusOrder = observer(() => {
 

@@ -5,14 +5,14 @@ import { toJS } from 'mobx'
 
 import { Row, Table } from 'react-bootstrap'
 
-import Page from '../hoc/Page'
-import PageHeader from '../UI/PageHeader'
-import LoaderPage from '../UI/Loader/LoaderPage'
-import { TrTableDetail, TrTableOrders } from '../styles/TrTableOrders'
-import OrderDetailCart from '../components/OrderDetailCart'
-import ButtonShowModal from '../UX/Modal/ButtonShowModal'
-import Orders from '../mobx/Orders'
-import Catalog from '../mobx/Catalog'
+import Page from '../../hoc/Page'
+import PageHeader from '../../UI/PageHeader'
+import LoaderPage from '../../UI/Loader/LoaderPage'
+import { TrTableDetail, TrTableOrders } from '../../styledComponents/TrTableOrders'
+import OrderDetailCart from '../../components/OrderDetailCart'
+import ButtonShowModal from '../../UX/Modal/ButtonShowModal'
+import Orders from '../../mobx/Orders'
+import Catalog from '../../mobx/Catalog'
 
 const OrderDetailsPage = observer(() => {
   const { id } = useParams()
