@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 
-import { TrTableCart } from '../../styles/TrTableCart'
+import { TrTableCart } from '../../styledComponents/TrTableCart'
 import CounterCart from '../../UX/Cart/CounterCart'
 import ButtonRemoveFromCart from '../../UX/Cart/ButtonRemoveFromCart'
 import CatalogMap from '../../mobx/CatalogMap'

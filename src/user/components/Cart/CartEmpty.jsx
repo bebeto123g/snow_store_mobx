@@ -2,7 +2,7 @@ import React from 'react'
 
 import PageHeader from '../../UI/PageHeader'
 import { Row } from 'react-bootstrap'
-import ButtonToRoute from '../../UX/Routes/ButtonToRoute'
+import ButtonToRoute from '../../UX/Button/ButtonToRoute'
 
 const CartEmpty = () => {
   return (

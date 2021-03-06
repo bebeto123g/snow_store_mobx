@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { Card } from 'react-bootstrap'
-import ButtonRemoveFromCart from '../../../UX/Cart/ButtonRemoveFromCart'
-import ButtonAddToCart from '../../../UX/Cart/ButtonAddToCart'
+import ButtonRemoveFromCart from '../../../../UX/Cart/ButtonRemoveFromCart'
+import ButtonAddToCart from '../../../../UX/Cart/ButtonAddToCart'
 
 const CatalogCardFooter = ({ id, reserve, inCart }) => {
   const [itemInCart, setInCart] = useState(inCart)

@@ -3,20 +3,20 @@ import { observer } from 'mobx-react'
 
 import { Nav } from 'react-bootstrap'
 
-import LinkNavPanel from '../../UX/LinkNavPanel'
+import ButtonNavLink from '../../UX/Button/ButtonNavLink'
 import { navLinksTypes } from './navLinksTypes'
 import isLogin from '../../mobx/isLogin'
 
-const NavLinks = observer(() => {
+const NavLinksUser = observer(() => {
     return (
       <Nav className='mr-auto'>
         {navLinksTypes.map(({ to, exact, text, isAuth }) => {
           if (!isLogin.isLogin && isAuth) return
 
           return (
-            <LinkNavPanel to={to} exact={exact} key={text + to}>
+            <ButtonNavLink to={to} exact={exact} key={text + to}>
               {text}
-            </LinkNavPanel>
+            </ButtonNavLink>
           )
         })}
       </Nav>
@@ -24,4 +24,4 @@ const NavLinks = observer(() => {
   }
 )
 
-export default NavLinks
+export default NavLinksUser

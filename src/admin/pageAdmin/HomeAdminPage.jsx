@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from '../hoc/Page'
+import Page from '../../hoc/Page'
 
 const HomeAdminPage = () => {
   return (

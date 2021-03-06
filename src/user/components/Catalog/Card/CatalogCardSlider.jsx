@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { Carousel } from 'react-bootstrap'
-import { CarouselCatalogCard } from '../../../styles/CarouselCatalogCard'
+import { CarouselCatalogCard } from '../../../../styledComponents/CarouselCatalogCard'
 
 const CatalogCardSlider = ({ img }) => {
   const [index, setIndex] = useState(0)
