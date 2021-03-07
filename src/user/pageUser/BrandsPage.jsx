@@ -7,7 +7,7 @@ import Page from '../../hoc/Page'
 import PageHeader from '../../UI/PageHeader'
 
 import LoaderPage from '../../UI/Loader/LoaderPage'
-import BrandsCards from '../../components/BrandsCards'
+import BrandsCards from '../components/BrandsCards'
 import Brands from '../../mobx/Brands'
 
 const BrandsPage = observer(() => {

@@ -4,7 +4,7 @@ import Alert from './Alert'
 import PageError from './PageError'
 
 class Orders {
-  orders = []
+  orders = null
   detailOrder = {}
 
   constructor() {
@@ -17,7 +17,7 @@ class Orders {
 
       const response = await fetchAllOrder(token)
 
-      this.orders = response.data.map(({ cart, _id, sum, status, date }) => {
+      const orders = response.data.map(({ cart, _id, sum, status, date }) => {
         return {
           orderId: _id,
           sum,
@@ -27,6 +27,7 @@ class Orders {
           orderNum: _id.slice(-8, _id.length).toUpperCase()
         }
       })
+      this.setOrders(orders)
 
     } catch {
       Alert.show({
@@ -37,6 +38,10 @@ class Orders {
     }
   }
 
+  setOrders(orders) {
+    this.orders = orders
+  }
+
   async loadDetail(id) {
     try {
       const token = localStorage.getItem('token')
@@ -45,7 +50,7 @@ class Orders {
 
       const { cart, sum, status, date } = response.data
 
-      this.detailOrder = {
+      const detail = {
         orderId: id,
         sum,
         cart,
@@ -54,6 +59,8 @@ class Orders {
         orderNum: id.slice(-8, id.length).toUpperCase()
       }
 
+      this.setDetailOrder(detail)
+
     } catch {
       Alert.show({
         variant: 'danger',
@@ -61,7 +68,14 @@ class Orders {
       })
       PageError.error()
     }
+  }
 
+  setDetailOrder(detail) {
+    this.detailOrder = detail
+  }
+
+  setDetailOrderStatus(status) {
+    this.detailOrder.status = status
   }
 
   async putStatus(type) {
@@ -72,7 +86,7 @@ class Orders {
 
       const { status } = response.data
 
-      this.detailOrder.status = status
+      this.setDetailOrderStatus(status)
 
       await this.load()
 

@@ -6,15 +6,15 @@ import { Row, Table } from 'react-bootstrap'
 import PageHeader from '../../UI/PageHeader'
 import Page from '../../hoc/Page'
 import LoaderPage from '../../UI/Loader/LoaderPage'
-import ButtonToRoute from '../../UX/Button/ButtonToRoute'
-import OrdersTableCell from '../../components/OrdersTableCell'
+import OrdersTableCell from '../components/Order/OrdersTableCell'
 import { TrTableOrders } from '../../styledComponents/TrTableOrders'
 import Orders from '../../mobx/Orders'
+import OrderEmpty from '../components/Order/OrderEmpty'
 
 const OrdersPage = observer(() => {
 
     useEffect(() => {
-      if (!Orders.orders.length) {
+      if (!Orders.orders) {
         Orders.load()
       }
     }, [])
@@ -24,17 +24,8 @@ const OrdersPage = observer(() => {
     })
 
     if (!Orders.orders) return <LoaderPage />
-    if (!Orders.orders.length)
-      return (
-        <Page>
-          <PageHeader>Заказы отсутствуют</PageHeader>
-          <Row>
-            <ButtonToRoute to={'/catalog'} variant={'info'} className={'mx-auto'}>
-              Перейти в каталог
-            </ButtonToRoute>
-          </Row>
-        </Page>
-      )
+
+    if (!Orders.orders.length) return <OrderEmpty />
 
     return (
       <Page>

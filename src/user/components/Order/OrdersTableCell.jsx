@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import { TrTableOrders } from '../styledComponents/TrTableOrders'
+import { TrTableOrders } from '../../../styledComponents/TrTableOrders'
 
 const OrdersTableCell = ({ orderId, sum, orderNum, date, status }) => {
   const history = useHistory()

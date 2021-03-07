@@ -17,8 +17,12 @@ class Cart {
     if (cart && Object.keys(cart).length) {
       CartMap.init(cart)
       await Catalog.load()
-      this.cart = cart
+      this.setCart(cart)
     }
+  }
+
+  setCart(cart) {
+    this.cart = cart
   }
 
   increment(id) {

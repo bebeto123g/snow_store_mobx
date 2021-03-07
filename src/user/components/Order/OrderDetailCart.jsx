@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { observer } from 'mobx-react'
 import { toJS } from 'mobx'
 
-import { TrTableOrders } from '../styledComponents/TrTableOrders'
-import Catalog from '../mobx/Catalog'
-import LoaderSpan from '../UI/Loader/LoaderSpan'
+import { TrTableOrders } from '../../../styledComponents/TrTableOrders'
+import Catalog from '../../../mobx/Catalog'
+import LoaderSpan from '../../../UI/Loader/LoaderSpan'
 
 const OrderDetailCart = observer(({ count, price, id }) => {
   const [bord, setBord] = useState(null)

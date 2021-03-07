@@ -44,6 +44,7 @@ class Auth {
     localStorage.removeItem('userId')
     localStorage.removeItem('expiresIn')
     localStorage.removeItem('profile')
+    localStorage.removeItem('root')
 
     Modal.hide()
 
@@ -69,25 +70,29 @@ class Auth {
       const response = await fetchAuthForm(type, this.form)
       this.autoLogout(3600000)
 
-      const { token, userId, message, profile } = response.data
+      const { token, userId, message, profile, root } = response.data
 
       localStorage.setItem('token', token)
       localStorage.setItem('userId', userId)
       localStorage.setItem('expiresIn', String(Date.now() + 3600000))
       localStorage.setItem('profile', JSON.stringify(profile))
 
+      if (root === 'user') {
+        localStorage.setItem('root', userId + token)
+      }
+
       Alert.show({
         variant: 'success', message
       })
 
-      this.success({ profile, token, userId })
+      this.success({ profile, token, userId, root })
     } catch (e) {
       this.serverError(e)
     }
   }
 
-  success({ profile, token, userId }) {
-    isLogin.login()
+  success({ profile, token, userId, root = '' }) {
+    isLogin.login(root)
     this.form.password = ''
     this.profile = profile
     this.token = token
@@ -136,19 +141,16 @@ class Auth {
     })
   }
 
-  changeForm(form) {
-    this.form = form
-  }
-
   clearError() {
     this.errors = null
   }
 
   init() {
     const currentTime = Date.now()
+    const root = localStorage.getItem('root')
     const expiresIn = +localStorage.getItem('expiresIn')
 
-    if (!expiresIn || currentTime > expiresIn) {
+    if (!expiresIn || currentTime > expiresIn || !root) {
       localStorage.removeItem('token')
       localStorage.removeItem('userId')
       localStorage.removeItem('expiresIn')
@@ -164,7 +166,6 @@ class Auth {
 
     if (token && userId) {
       this.success({ profile, token, userId })
-      isLogin.login()
     }
   }
 }

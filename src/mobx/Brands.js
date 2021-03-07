@@ -13,7 +13,8 @@ class Brands {
 
   async load() {
     try {
-      this.brands = await fetchBrandList()
+      const brands = await fetchBrandList()
+      this.setBrands(brands)
     } catch (e) {
       PageError.error()
       Alert.show({
@@ -21,6 +22,10 @@ class Brands {
         message: 'Оказия при загрузке брэндов'
       })
     }
+  }
+
+  setBrands(brands) {
+    this.brands = brands
   }
 
 }

@@ -22,8 +22,9 @@ const FormGroup = observer(({ type, label, text }) => {
           required
           type={type}
           placeholder={label}
+          autoComplete={'on'}
           isInvalid={Auth.errors && Auth.errors[type]}
-          isValid={isLogin.isLogin}
+          isValid={isLogin.isLogin || isLogin.isAdmin || isLogin.isManager}
           defaultValue={Auth.form[type]}
         />
         {Auth.errors && Auth.errors[type] ? (

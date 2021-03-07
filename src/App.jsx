@@ -5,9 +5,15 @@ import Auth from './mobx/Auth'
 import Cart from './mobx/Cart'
 import isLogin from './mobx/isLogin'
 
-import AppAdmin from './admin/AppAdmin'
-import AppManager from './manager/AppManager'
-import AppUser from './user/AppUser'
+import { AppContainer } from './styledComponents/AppConteiner'
+import { Container } from 'react-bootstrap'
+import AlertApp from './components/AlertApp'
+import SwitchUserRoutes from './routes/SwitchUserRoutes'
+import Footer from './user/components/Footer'
+import ModalApp from './components/Modal'
+import SwitchAdminRoutes from './routes/SwitchAdminRoutes'
+import SwitchManagerRoutes from './routes/SwitchManagerRoutes'
+import NavbarPanel from './components/Navbar/NavbarPanel'
 
 const App = observer(() => {
 
@@ -19,10 +25,21 @@ const App = observer(() => {
     Cart.init()
   }, [])
 
-  if (isLogin.isAdmin) return <AppAdmin />
-  if (isLogin.isManager) return <AppManager />
-
-  return <AppUser />
+  return (
+    <>
+      <NavbarPanel />
+      <AppContainer>
+        <Container>
+          <AlertApp />
+          {isLogin.isAdmin && <SwitchAdminRoutes />}
+          {isLogin.isManager && <SwitchManagerRoutes />}
+          {!isLogin.isManager && !isLogin.isManager && <SwitchUserRoutes />}
+        </Container>
+      </AppContainer>
+      {!isLogin.isManager && !isLogin.isManager && <Footer />}
+      <ModalApp />
+    </>
+  )
 })
 
 export default App

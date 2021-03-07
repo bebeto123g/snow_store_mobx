@@ -15,17 +15,23 @@ class isLogin {
     this.isAdmin = false
   }
 
-  login() {
-    this.isLogin = true
+  login(root) {
+    let str = root.split(' ')
+    switch (str[0]) {
+      case ('admin'):
+        this.isAdmin = true
+        return
+
+      case ('manager'):
+        this.isManager = true
+        return
+
+      default:
+        this.isLogin = true
+        return
+    }
   }
 
-  manager() {
-    this.isManager = true
-  }
-
-  admin() {
-    this.isAdmin = true
-  }
 }
 
 export default new isLogin()

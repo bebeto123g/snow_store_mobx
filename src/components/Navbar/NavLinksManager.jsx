@@ -1,7 +1,7 @@
 import React from 'react'
+import ButtonNavLink from '../../UX/Button/ButtonNavLink'
 import { Nav } from 'react-bootstrap'
 import { navLinksManager } from './navLinksTypes'
-import ButtonNavLink from '../../UX/Button/ButtonNavLink'
 
 const NavLinksManager = () => {
   return (

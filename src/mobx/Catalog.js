@@ -24,7 +24,7 @@ class Catalog {
           : (item.inCart = false)
       })
 
-      this.catalog = catalog
+      this.setCatalog(catalog)
       CatalogMap.load(catalog)
     } catch {
       Alert.show({
@@ -33,6 +33,10 @@ class Catalog {
       })
       PageError.error()
     }
+  }
+
+  setCatalog(catalog) {
+    this.catalog = catalog
   }
 
   update() {

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ButtonShowModal from '../../UX/Modal/ButtonShowModal'
+import ButtonShowModal from '../Modal/ButtonShowModal'
 
-const NavbarButtonAuth = ({ isLogin }) => {
+const ButtonNavbarAuth = ({ isLogin }) => {
   return (
     <>
       {isLogin.isLogin || isLogin.isManager || isLogin.isAdmin ? (
@@ -15,8 +15,8 @@ const NavbarButtonAuth = ({ isLogin }) => {
   )
 }
 
-NavbarButtonAuth.propTypes = {
+ButtonNavbarAuth.propTypes = {
   isLogin: PropTypes.object.isRequired
 }
 
-export default NavbarButtonAuth
+export default ButtonNavbarAuth

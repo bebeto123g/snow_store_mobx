@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { Nav } from 'react-bootstrap'
-
 import ButtonNavLink from '../../UX/Button/ButtonNavLink'
 import { navLinksUser } from './navLinksTypes'
 
