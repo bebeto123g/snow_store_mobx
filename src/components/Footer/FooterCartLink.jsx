@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import CartSum from '../Cart/CartSum'
+import CartSum from '../../user/components/Cart/CartSum'
 
 const FooterCartLink = () => {
   return (

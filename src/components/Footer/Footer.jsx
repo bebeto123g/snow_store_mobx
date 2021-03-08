@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AppFooter } from '../../../styledComponents/AppFooter'
+import { AppFooter } from '../../styledComponents/AppFooter'
 import FooterCartLink from './FooterCartLink'
 
 const Footer = () => {
