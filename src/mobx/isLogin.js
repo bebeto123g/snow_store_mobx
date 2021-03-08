@@ -16,8 +16,7 @@ class isLogin {
   }
 
   login(root) {
-    let str = root.split(' ')
-    switch (str[0]) {
+    switch (root) {
       case ('admin'):
         this.isAdmin = true
         return

@@ -27,6 +27,7 @@ class Orders {
           orderNum: _id.slice(-8, _id.length).toUpperCase()
         }
       })
+
       this.setOrders(orders)
 
     } catch {

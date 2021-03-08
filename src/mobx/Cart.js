@@ -96,12 +96,15 @@ class Cart {
 
       const response = await fetchToOrder({ cart, sum: this.sum }, token)
 
-      if (orders && orders.length) {
-        await Orders.load()
-      }
+      // if (orders && orders.length) {
+      //   await Orders.load()
+      // }
+      await Orders.load()
 
       Catalog.update()
+
       this.clear()
+
       Alert.show({
         variant: 'success',
         message: response.data.message

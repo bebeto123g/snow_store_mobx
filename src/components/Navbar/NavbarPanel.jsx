@@ -13,20 +13,24 @@ import NavLinksAdmin from './NavLinksAdmin'
 const NavbarPanel = observer(() => {
     return (
       <header>
-        <Navbar collapseOnSelect expand='md' bg='dark' variant='dark'>
+        <Navbar
+          collapseOnSelect
+          expand='md'
+          bg={isLogin.isAdmin ? 'info' : isLogin.isManager ? 'warning' : 'dark'}
+          variant='dark'>
           <NavLogo />
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
+
             {
-              !isLogin.isAdmin && !isLogin.isManager && <NavLinksUser isLogin={isLogin.isLogin} />
+              isLogin.isAdmin && <NavLinksAdmin />
             }
             {
               isLogin.isManager && <NavLinksManager />
             }
             {
-              isLogin.isAdmin && <NavLinksAdmin />
+              !isLogin.isAdmin && !isLogin.isManager && <NavLinksUser isLogin={isLogin.isLogin} />
             }
-
             {/*<LineSearch submit={submitHandlerSearch} />*/}
             <ButtonNavbarAuth isLogin={isLogin} />
           </Navbar.Collapse>

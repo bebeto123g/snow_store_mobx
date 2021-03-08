@@ -33,10 +33,10 @@ const App = observer(() => {
           <AlertApp />
           {isLogin.isAdmin && <SwitchAdminRoutes />}
           {isLogin.isManager && <SwitchManagerRoutes />}
-          {!isLogin.isManager && !isLogin.isManager && <SwitchUserRoutes />}
+          {!isLogin.isManager && !isLogin.isAdmin && <SwitchUserRoutes />}
         </Container>
       </AppContainer>
-      {!isLogin.isManager && !isLogin.isManager && <Footer />}
+      {!isLogin.isManager && !isLogin.isAdmin && <Footer />}
       <ModalApp />
     </>
   )
